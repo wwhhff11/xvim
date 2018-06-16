@@ -3,6 +3,8 @@ filetype off
 call vundle#rc()
 
 Bundle "Solarized"
+Bundle "fatih/vim-go"
+Bundle "rhysd/vim-clang-format"
 
 Bundle "powerline/powerline"
 Bundle "airblade/vim-gitgutter"
