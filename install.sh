@@ -1,3 +1,5 @@
-ln -s .vimrc ~
-ln -s .vimrc.bundles
-ln -s .vim ~
+ln -s ~/xvim/.vimrc ~
+ln -s ~/xvim/.vimrc.bundles ~
+ln -s ~/xvim/.vim ~
+
+cp ~/xvim/.vim/bundle/Solarized/colors/solarized.vim  ~/.vim/colors

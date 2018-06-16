@@ -1,3 +1,17 @@
 filetype off
   set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+Bundle "Solarized"
+
+Bundle "python-mode/python-mode"
+
+Bundle 'christoomey/vim-run-interactive'
+Bundle 'croaky/vim-colors-github'
+Bundle 'danro/rename.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'pbrisbin/vim-mkdir'
+Bundle 'scrooloose/syntastic'
+Bundle 'slim-template/vim-slim'
