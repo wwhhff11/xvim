@@ -1,1 +1,1 @@
-# xvim
+bash install.sh
