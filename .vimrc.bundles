@@ -4,7 +4,6 @@ call vundle#rc()
 
 Bundle "Solarized"
 
-Bundle "python-mode/python-mode"
 Bundle "powerline/powerline"
 Bundle "airblade/vim-gitgutter"
 
