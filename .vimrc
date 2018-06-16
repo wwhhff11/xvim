@@ -2,6 +2,13 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+" Pathogen load
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+syntax on
+
 "主题"
 colorscheme solarized
 set background=light
