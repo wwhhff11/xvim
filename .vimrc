@@ -1,5 +1,5 @@
 if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+	source ~/.vimrc.bundles
 endif
 
 filetype off
@@ -33,18 +33,18 @@ set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
 set smartindent             " 开启新行时使用智能自动缩进
 set backspace=indent,eol,start
-                            " 不设定在插入状态无法用退格键和 Delete 键删除回车符
+" 不设定在插入状态无法用退格键和 Delete 键删除回车符
 set cmdheight=1             " 设定命令行的行数为 1
 set laststatus=2            " 显示状态栏 (默认值为 1, 无法显示状态栏)
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
-                            " 设置在状态行显示的信息
+" 设置在状态行显示的信息
 set foldenable              " 开始折叠
 set foldmethod=syntax       " 设置语法折叠
 set foldcolumn=0            " 设置折叠区域的宽度
 setlocal foldlevel=1        " 设置折叠层数为
 " set foldclose=all           " 设置为自动关闭折叠                            
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-                            " 用空格键来开关折叠
+" 用空格键来开关折叠
 colorscheme solarized
 set background=light
 
@@ -56,16 +56,16 @@ map <C-n> :NERDTreeToggle<CR>
 
 "目录支持git
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
+			\ "Modified"  : "✹",
+			\ "Staged"    : "✚",
+			\ "Untracked" : "✭",
+			\ "Renamed"   : "➜",
+			\ "Unmerged"  : "═",
+			\ "Deleted"   : "✖",
+			\ "Dirty"     : "✗",
+			\ "Clean"     : "✔︎",
+			\ "Unknown"   : "?"
+			\ }
 
 let g:go_version_warning = 0
 
@@ -77,20 +77,41 @@ autocmd BufNewFile *.py 0r ~/.vim/vim_template/vim_pyhton_header
 autocmd BufNewFile *.py ks|call FileName()|'s
 autocmd BufNewFile *.py ks|call CreatedTime()|'s
 fun FileName()
-    if line("$") > 10
-        let l = 10  "这里是字母L 不是数字1
-    else
-        let l = line("$")
-    endif
-    exe "1," . l . "g/File Name:.*/s/File Name:.*/File Name: " .expand("%")
-       "最前面是数字1，这里的File Name: 要和模板中一致
+	if line("$") > 10
+		let l = 10  "这里是字母L 不是数字1
+	else
+		let l = line("$")
+	endif
+	exe "1," . l . "g/File Name:.*/s/File Name:.*/File Name: " .expand("%")
+	"最前面是数字1，这里的File Name: 要和模板中一致
 endfun
 fun CreatedTime()
-    if line("$") > 10
-        let l = 10
-    else
-        let l = line("$")
-    endif
-    exe "1," . l . "g/Created Time:.*/s/Created Time:.*/Created Time: " .strftime("%Y-%m-%d %T")
-        "这里Create Time: 要和模板中一致
+	if line("$") > 10
+		let l = 10
+	else
+		let l = line("$")
+	endif
+	exe "1," . l . "g/Created Time:.*/s/Created Time:.*/Created Time: " .strftime("%Y-%m-%d %T")
+	"这里Create Time: 要和模板中一致
 endfun
+
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+			\ 'dir': '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll|xls|xlsx|doc|docx|meta|bytes|ppt|pptx)$',
+			\}
+
+" taglist
+let Tlist_Show_One_File=1  "每次只显示一个文件的标签，工程较大时，如果显示所有文件的标签打开会很慢。
+let Tlist_Use_Right_Window=1  "默认打开到窗口右侧，由于nerdtree已经占用了左侧窗口，taglist放到右侧，避免冲突。
+let Tlist_GainFocus_On_ToggleOpen=1  "打开时光标放到taglist窗口，这样打开后可以直接挪动光标到对应的标签跳转，也可以直接按q退出taglist窗口。
+let Tlist_Close_On_Select=1  "选中标签后就关闭taglist窗口，个人喜好taglist只在要跳转时出现。
+map <C-u> :TlistToggle<CR>
+
+" indentLine 代码缩进线标志线
+let g:indentLine_setColors = 0
+let g:indentLine_char = '|'
+let g:indentLine_color_term = 239
+"映射到ctrl+i键
+map <C-i> :IndentLinesToggle<CR> 
