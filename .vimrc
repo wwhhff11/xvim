@@ -73,9 +73,14 @@ let g:go_version_warning = 0
 let g:clang_format#auto_format_on_insert_leave=1    "退出插入模式时自动格式化
 
 " header
-autocmd BufNewFile *.py 0r ~/.vim/vim_template/vim_pyhton_header
+autocmd BufNewFile *.py 0r ~/.vim/vim_template/vim_python_header
 autocmd BufNewFile *.py ks|call FileName()|'s
 autocmd BufNewFile *.py ks|call CreatedTime()|'s
+
+autocmd BufNewFile *.sh 0r ~/.vim/vim_template/vim_bash_header
+autocmd BufNewFile *.sh ks|call FileName()|'s
+autocmd BufNewFile *.sh ks|call CreatedTime()|'s
+
 fun FileName()
 	if line("$") > 10
 		let l = 10  "这里是字母L 不是数字1
