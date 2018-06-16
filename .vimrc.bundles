@@ -5,6 +5,8 @@ call vundle#rc()
 Bundle "Solarized"
 
 Bundle "python-mode/python-mode"
+Bundle "powerline/powerline"
+Bundle "airblade/vim-gitgutter"
 
 Bundle 'christoomey/vim-run-interactive'
 Bundle 'croaky/vim-colors-github'
@@ -15,3 +17,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'pbrisbin/vim-mkdir'
 Bundle 'scrooloose/syntastic'
 Bundle 'slim-template/vim-slim'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
