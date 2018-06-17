@@ -1,0 +1,1 @@
+/home/ubuntu/typhoon-blade/vim/syntax/blade_root.vim
