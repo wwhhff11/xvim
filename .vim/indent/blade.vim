@@ -1,0 +1,1 @@
+/home/ubuntu/typhoon-blade/vim/indent/blade.vim
