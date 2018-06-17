@@ -21,4 +21,5 @@ Bundle "Xuyuanp/nerdtree-git-plugin"
 Bundle 'Raimondi/delimitMate'
 Bundle "tpope/vim-surround"
 Bundle 'Yggdroot/indentLine'
-Bundle 'vim-scripts/taglist.vim.git'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'pangloss/vim-javascript'
