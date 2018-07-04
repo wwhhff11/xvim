@@ -32,6 +32,8 @@ set hidden                  " 允许在有未保存的修改时切换缓冲区�
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
 set smartindent             " 开启新行时使用智能自动缩进
+set cindent					"C语言风格缩进
+set autoindent				"自动缩进
 set backspace=indent,eol,start
 " 不设定在插入状态无法用退格键和 Delete 键删除回车符
 set cmdheight=1             " 设定命令行的行数为 1
@@ -48,11 +50,9 @@ setlocal foldlevel=1        " 设置折叠层数为
 colorscheme solarized
 set background=light
 
-"ctrl+n 打开目录 ctrl+w 切换窗口焦点
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-hi CursorLine cterm=NONE ctermbg=white
-map <C-n> :NERDTreeToggle<CR>
+set expandtab
+autocmd FileType python set expandtab
+
 
 let g:go_version_warning = 0
 
