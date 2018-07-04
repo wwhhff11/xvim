@@ -1,25 +1,11 @@
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" shift + * 快速查找
-
+Bundle "Vundle.vim"
+Bundle "vundle"
 Bundle "Solarized"
 Bundle "fatih/vim-go"
-Bundle "powerline/powerline"
-Bundle "airblade/vim-gitgutter"
 Bundle "christoomey/vim-run-interactive"
-Bundle "croaky/vim-colors-github"
-Bundle "danro/rename.vim"
 Bundle "majutsushi/tagbar"
-Bundle "kchmck/vim-coffee-script"
-Bundle "kien/ctrlp.vim"
-Bundle "pbrisbin/vim-mkdir"
-Bundle "scrooloose/syntastic"
-Bundle "slim-template/vim-slim"
-Bundle "scrooloose/nerdtree"
-Bundle "Xuyuanp/nerdtree-git-plugin"
 Bundle 'Raimondi/delimitMate'
 Bundle "tpope/vim-surround"
-Bundle 'Yggdroot/indentLine'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'pangloss/vim-javascript'

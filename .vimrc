@@ -54,19 +54,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 hi CursorLine cterm=NONE ctermbg=white
 map <C-n> :NERDTreeToggle<CR>
 
-"目录支持git
-let g:NERDTreeIndicatorMapCustom = {
-			\ "Modified"  : "✹",
-			\ "Staged"    : "✚",
-			\ "Untracked" : "✭",
-			\ "Renamed"   : "➜",
-			\ "Unmerged"  : "═",
-			\ "Deleted"   : "✖",
-			\ "Dirty"     : "✗",
-			\ "Clean"     : "✔︎",
-			\ "Unknown"   : "?"
-			\ }
-
 let g:go_version_warning = 0
 
 " fmt
@@ -99,24 +86,3 @@ fun CreatedTime()
 	exe "1," . l . "g/Created Time:.*/s/Created Time:.*/Created Time: " .strftime("%Y-%m-%d %T")
 	"这里Create Time: 要和模板中一致
 endfun
-
-" ctrlp
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-			\ 'dir': '\v[\/]\.(git|hg|svn)$',
-			\ 'file': '\v\.(exe|so|dll|xls|xlsx|doc|docx|meta|bytes|ppt|pptx)$',
-			\}
-
-" taglist
-let Tlist_Show_One_File=1  "每次只显示一个文件的标签，工程较大时，如果显示所有文件的标签打开会很慢。
-let Tlist_Use_Right_Window=1  "默认打开到窗口右侧，由于nerdtree已经占用了左侧窗口，taglist放到右侧，避免冲突。
-let Tlist_GainFocus_On_ToggleOpen=1  "打开时光标放到taglist窗口，这样打开后可以直接挪动光标到对应的标签跳转，也可以直接按q退出taglist窗口。
-let Tlist_Close_On_Select=1  "选中标签后就关闭taglist窗口，个人喜好taglist只在要跳转时出现。
-map <C-u> :TlistToggle<CR>
-
-" indentLine 代码缩进线标志线
-let g:indentLine_setColors = 0
-let g:indentLine_char = '|'
-let g:indentLine_color_term = 239
-"映射到ctrl+i键
-map <C-i> :IndentLinesToggle<CR> 
