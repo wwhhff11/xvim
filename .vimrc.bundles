@@ -9,3 +9,4 @@ Bundle "christoomey/vim-run-interactive"
 Bundle "majutsushi/tagbar"
 Bundle 'Raimondi/delimitMate'
 Bundle "tpope/vim-surround"
+Bundle "dgryski/vim-godef"

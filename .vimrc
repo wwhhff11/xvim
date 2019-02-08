@@ -40,13 +40,13 @@ set cmdheight=1             " 设定命令行的行数为 1
 set laststatus=2            " 显示状态栏 (默认值为 1, 无法显示状态栏)
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
 " 设置在状态行显示的信息
-set foldenable              " 开始折叠
+" set foldenable              " 开始折叠
 set foldmethod=syntax       " 设置语法折叠
 set foldcolumn=0            " 设置折叠区域的宽度
 setlocal foldlevel=1        " 设置折叠层数为
-" set foldclose=all           " 设置为自动关闭折叠                            
-" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-" 用空格键来开关折叠
+set foldlevelstart=99       " 打开文件是默认不折叠代码
+" set foldclose=all          " 设置为自动关闭折叠                
+" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> "用空格键来开关折叠
 colorscheme solarized
 set background=light
 
@@ -58,6 +58,10 @@ let g:go_version_warning = 0
 
 " fmt
 let g:clang_format#auto_format_on_insert_leave=1    "退出插入模式时自动格式化
+
+" godef
+let g:godef_split=3 "左右打开新窗口的时候
+let g:godef_same_file_in_same_window=1 "函数在同一个文件中时不需要打开新窗口
 
 " header
 autocmd BufNewFile *.py 0r ~/.vim/vim_template/vim_python_header
