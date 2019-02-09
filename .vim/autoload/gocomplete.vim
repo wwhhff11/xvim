@@ -1,0 +1,1 @@
+/home/wanhongfei/.vim/bundle/gocode/vim/autoload/gocomplete.vim
